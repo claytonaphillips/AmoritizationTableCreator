@@ -1,0 +1,41 @@
+<aura:component access="Public">
+    
+    <!--AURA EVENTS START-->
+    <aura:registerEvent name="createTableEvent" type="c:CreateAmoritizationTableEvent"/>
+    <!--AURA EVENTS END-->
+    
+    <!--LOAN CALCULATOR FORM HEADER START-->
+    <div class="slds-page-header">
+  		<div class="slds-media">
+        	<div class="slds-media__figure">
+        		<lightning:icon iconName="utility:money"/>
+    		</div>
+            <div class="slds-media__body">
+      			<h1 class="slds-page-header__title slds-truncate slds-align-middle" title="Loan Payment Table Creator">Loan Payment Table Creator</h1>
+    		</div>
+  		</div>
+	</div>
+    <!--LOAN CALCULATOR FORM HEADER END-->
+    
+    <!--LOAN CALCULATOR FORM START-->
+    <div class="slds-form slds-form_stacked">
+  		<div class="slds-form-element">
+    		<div class="slds-form-element__control">
+                <lightning:input type="number" name="purchasePriceInput" aura:id="purchasePriceInputId" label="Purchase Price" formatter="currency"/>
+    		</div>
+        </div>
+        <div class="slds-form-element">
+            <div class="slds-form-element__control">
+                <lightning:input type="number" name="downPaymentInput" aura:id="downPaymentInputId" label="Down Payment" formatter="currency" step="0.01"/>
+    		</div>
+        </div>
+        <div class="slds-form-element">
+            <div class="slds-form-element__control">
+                <lightning:input type="number" name="monthlyPaymentInput" aura:id="monthlyPaymentInputId" label="Monthly Payment" formatter="currency" step="0.01"/>
+    		</div>
+        </div>
+        <lightning:button label="Calculate" title="Calculate" onclick="{!c.createTable}"/>
+    </div> 
+    <!--LOAN CALCULATOR FORM END-->
+    
+</aura:component>

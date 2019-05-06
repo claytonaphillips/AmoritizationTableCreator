@@ -1,0 +1,35 @@
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome,flexiPage:availableForAllPageTypes,force:lightningQuickAction" access="Public">
+    
+    <!--AURA ATTRIBUTES START-->
+    <aura:attribute name="tablePlaceHolder" type="Aura.Component[]" access="Public"/>
+    <aura:attribute name="paymentChartPlaceHolder" type="Aura.Component[]" access="Public"/>
+    <!--AURA ATTRIBUTES END-->
+    
+    <!--AURA EVENT HANDLERS START-->
+    <aura:handler name="createTableEvent" event="c:CreateAmoritizationTableEvent" action="{!c.createTable}"/>
+	<!--AURA EVENT HANDLERS END-->
+    
+    <!--AURA DEPENDENCIES START-->
+    <aura:dependency resource="markup://c:GenericTableComponent" type="COMPONENT"/>
+    <aura:dependency resource="markup://c:GenericLineChartComp" type="COMPONENT"/>
+    <!--AURA DEPENDENCIES END-->
+	 
+    <body>
+        <div class="slds-box slds-theme_shade">
+    		<!--Loan Form START-->
+    		<c:AmoritizationFormComponent/>
+    		<!--Loan Form END-->
+    
+    		<!--Loan Table START-->
+            <br></br>
+    		{!v.tablePlaceHolder}
+    		<!--Loan Table END-->
+    
+    		<!--Loan Chart START-->
+            <br></br>
+    		{!v.paymentChartPlaceHolder}
+    		<!--Loan Chart END-->
+        </div>
+    </body>      
+    
+</aura:component>

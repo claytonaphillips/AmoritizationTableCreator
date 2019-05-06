@@ -1,0 +1,15 @@
+<aura:component>
+	
+    <!--AURA ATTRIBUTES START-->
+    <aura:attribute name="tableColumns" type="List" access="Public"/>
+    <aura:attribute name="tableData" type="Object[]" access="Public"/>
+    <!--AURA ATTRIBUTES END-->
+    
+    <!--DATA TABLE START-->
+    <lightning:datatable data="{!v.tableData}"
+                         columns="{!v.tableColumns}"
+                         keyField="id"
+                         hideCheckboxColumn="true"/>
+    <!--DATA TABLE END-->   
+	
+</aura:component>

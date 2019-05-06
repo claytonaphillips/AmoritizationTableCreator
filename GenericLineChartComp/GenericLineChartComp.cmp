@@ -1,0 +1,16 @@
+<aura:component>
+	
+    <!--AURA ATTRIBUTES START-->
+    <aura:attribute name="xAxisLabel" type="List" access="Public"/>
+    <aura:attribute name="chartXValues" type="List" access="Public"/>
+    <aura:attribute name="chartYValues" type="List" access="Public"/>
+    <!--AURA ATTRIBUTES END-->
+    
+    <!--LINE CHART START-->
+    <ltng:require scripts="{!$Resource.ChartJS23}" afterScriptsLoaded="{!c.generateChart}"/>
+    <div class="slds-box">
+		<canvas aura:id="linechart" height="300" width="450"></canvas>
+    </div>
+    <!--LINE CHART END-->
+    
+</aura:component>
